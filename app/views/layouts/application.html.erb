@@ -16,7 +16,7 @@
       |
       <a>
       <% if @current_user %>
-        <%= @current_user["first_name"] %>
+        Logged in as: <%= @current_user["username"] %> |
         
         <a href="/logout">Logout</a>
       <% else %>
