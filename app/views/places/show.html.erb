@@ -20,12 +20,14 @@
         <div class="col-md-4 col-sm-6">
           <h3><%= post["title"] %></h3>
           <h5><%= post["posted_on"] %></h5>
+        <% if post.image.attached? %>
+          <img src="<%= url_for(post.image) %>" class="img-fluid">
+        <% else %>
+          <img src="<%= post["image"] %>" class="img-fluid">
+        <% end %>
           <p><%= post["description"] %></p>
-          <% if post.image.attached? %>
-            <img src="<%= url_for(post.image) %>" class="img-fluid">
-          <% else %>
-            <img src="<%= post["image"] %>" class="img-fluid">
-          <% end %>
+
+
         </div>
       <% end %>
 
